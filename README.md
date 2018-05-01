@@ -1,0 +1,2 @@
+# testproject
+my training project
