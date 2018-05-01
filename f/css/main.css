@@ -1,0 +1,204 @@
+
+@import url(fonts.css);
+@import url(normalize.css);
+
+h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	font-weight: normal;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.page__bg {
+	background-image: url("/images/background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.page-content__wrapper {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 47px 0 67px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.page-content__title {
+	font-size: 36px;
+	font-family: "Exo2.0-Thin";
+	color: #fff;
+	line-height: 1.2;
+	text-align: center;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+}
+
+.page-content__product-wrapper {
+	margin-top: 23px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.page-content__product-block {
+	border-width: 4px;
+	border-color: rgb(22, 152, 217);
+	border-style: solid;
+	background-color: rgb(242, 242, 242);
+	border-radius: 10px;
+	width: 312px;
+	height: 472px;
+	margin-right: 80px;
+	position: relative;
+}
+
+.page-content__product-block:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background-image: url("/images/background.png");
+	border: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-top: 20px solid transparent;
+}
+
+.page-content__product-block:last-child {
+	margin-right: 0;
+}
+
+.page-content__product-block--wrapper-text {
+	padding: 20px 45px;
+	position: relative;
+}
+
+.page-content__product-block--wrapper-text:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+	border: 20px solid rgb(242, 242, 242);
+	border-left: 20px solid transparent;
+	border-top: 20px solid transparent;
+	z-index: 10;	
+}
+
+.page-content__product-block--wrapper-text:after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 16px;
+    width: 4px;
+    height: 40px;
+    transform: skew(-45deg);
+    background-color: rgb(22, 152, 217);
+    z-index: 10;
+}
+
+.page-content__product-short-description {
+	font-size: 16px;
+	font-family: "TrebuchetMS-regular";
+	color: rgb(102, 102, 102);
+	line-height: 1.2;
+	text-align: left;
+}
+
+.page-content__product-title {
+	font-size: 48px;
+	font-family: "TrebuchetMS-bold";
+	color: rgb(0, 0, 0);
+	line-height: 1.2;
+	text-align: left;
+}
+
+.page-content__product-main-component {
+	font-size: 24px;
+	font-family: "TrebuchetMS-bold";
+	color: rgb(0, 0, 0);
+	line-height: 1.2;
+	text-align: left;
+}
+
+.page-content__product-offer {
+	font-size: 14px;
+	font-family: "TrebuchetMS-regular";
+	color: rgb(102, 102, 102);
+	line-height: 1.143;
+	text-align: left;
+	margin-top: 16px;
+}
+
+.page-content__product-cat-image {
+	background-image: url("/images/cat.png");
+	width: 320px;
+	height: 273px;
+	position: absolute;
+	bottom: 0;
+}
+
+.page-content__product-weight {
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
+	font-size: 42px;
+    line-height: 1.35;
+	font-family: "TrebuchetMS-regular";
+	color: rgb(255, 255, 255);
+	text-align: center;
+	border-radius: 50%;
+	background-color: rgb(22, 152, 217);
+	width: 81px;
+	height: 81px;
+}
+
+.page-content__product-weght--units-measure {
+	font-family: "TrebuchetMS-regular";
+	font-size: 21px;
+	display: block;
+    line-height: 0.7;
+}
+
+.Back {
+  border-width: 4px;
+  border-color: rgb(22, 152, 217);
+  border-style: solid;
+  background-color: rgb(242, 242, 242);
+  position: absolute;
+  left: 80px;
+  top: 104px;
+  width: 312px;
+  height: 472px;
+  z-index: 51;
+}
+.Underline {
+  background-image: url("Underline.png");
+  position: absolute;
+  left: 311px;
+  top: 612px;
+  width: 28px;
+  height: 1px;
+  z-index: 50;
+}
+.Чего_сидишь__Порадуй_котэ__купи_ {
+  font-size: 13px;
+  font-family: "Trebuchet MS";
+  color: rgb(255, 255, 255);
+  line-height: 1.231;
+  text-align: center;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  position: absolute;
+  left: 132px;
+  top: 610.349px;
+  z-index: 49;
+}
+
+
