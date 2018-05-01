@@ -19,7 +19,7 @@ p {
 }
 
 .page__bg {
-	background-image: url("/images/background.png");
+	background-image: url("../images/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -66,7 +66,7 @@ p {
     position: absolute;
     top: -4px;
     left: -4px;
-    background-image: url("/images/background.png");
+    background-image: url("../images/background.png");
 	border: 20px solid transparent;
 	border-left: 20px solid transparent;
 	border-top: 20px solid transparent;
@@ -138,7 +138,7 @@ p {
 }
 
 .page-content__product-cat-image {
-	background-image: url("/images/cat.png");
+	background-image: url("../images/cat.png");
 	width: 320px;
 	height: 273px;
 	position: absolute;
