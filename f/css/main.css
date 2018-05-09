@@ -19,7 +19,7 @@ p {
 }
 
 .page__bg {
-	background-image: url("../images/background.png");
+	background-image: url("/f/images/background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -50,27 +50,36 @@ p {
 }
 
 .page-content__product-block {
-	border-width: 4px;
-	border-color: rgb(22, 152, 217);
-	border-style: solid;
-	background-color: rgb(242, 242, 242);
-	border-radius: 10px;
-	width: 312px;
-	height: 472px;
+	/*border-width: 4px;*/
+	/* border-color: rgb(22, 152, 217); */
+	/* border-style: solid; */
+	background-image: url("/f/images/product_back_default.png");
+	/* border-radius: 10px; */
+	width: 320px;
+	height: 480px;
 	margin-right: 80px;
 	position: relative;
+	z-index: 10;
 }
 
-.page-content__product-block:before {
+.page-content__product-block.selected-product {
+	background-image: url("/f/images/product_back_selected.png");
+}
+
+.page-content__product-block.disabled-product {
+	background-image: url("/f/images/product_back_disabled.png");
+}
+
+/*.page-content__product-block:before {
     content: '';
     position: absolute;
     top: -4px;
     left: -4px;
-    background-image: url("../images/background.png");
+    background-image: url("/f/images/background.png");
 	border: 20px solid transparent;
 	border-left: 20px solid transparent;
 	border-top: 20px solid transparent;
-}
+}*/
 
 .page-content__product-block:last-child {
 	margin-right: 0;
@@ -81,7 +90,7 @@ p {
 	position: relative;
 }
 
-.page-content__product-block--wrapper-text:before {
+/*.page-content__product-block--wrapper-text:before {
     content: '';
     position: absolute;
     top: -4px;
@@ -90,9 +99,9 @@ p {
 	border-left: 20px solid transparent;
 	border-top: 20px solid transparent;
 	z-index: 10;	
-}
+}*/
 
-.page-content__product-block--wrapper-text:after {
+/*.page-content__product-block--wrapper-text:after {
     content: '';
     position: absolute;
     top: -4px;
@@ -102,7 +111,7 @@ p {
     transform: skew(-45deg);
     background-color: rgb(22, 152, 217);
     z-index: 10;
-}
+}*/
 
 .page-content__product-short-description {
 	font-size: 16px;
@@ -138,11 +147,12 @@ p {
 }
 
 .page-content__product-cat-image {
-	background-image: url("../images/cat.png");
-	width: 320px;
+ 	/* background-image: url("/f/images/cat.png"); */
+	width: 98%;
 	height: 273px;
 	position: absolute;
-	bottom: 0;
+	bottom: 4px;
+	left: 4px;
 }
 
 .page-content__product-weight {

@@ -4,15 +4,17 @@ var gulp = require("gulp"),
 
 gulp.task('connect', function() {
 	connect.server({
-		root: 'f',
+		proxy: 'localhost',
+		root: '',
 		livereload: true,
-		port: 8888
+		host: 'localhost',
+		port: 9000
 	});
-	opn('http://localhost:8888');
+	opn('http://localhost:9000');
 });
 
 gulp.task('html', function() {
-	gulp.src('./f/*.html')
+	gulp.src('./*.html')
 		.pipe(connect.reload());
 });
 
@@ -27,7 +29,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['./f/*.html'], ['html']),
+	gulp.watch(['./*.html'], ['html']),
 	gulp.watch(['./f/css/*.css'], ['css']),
 	gulp.watch(['./f/js/*.js'], ['js']);
 });
