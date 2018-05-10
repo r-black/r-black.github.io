@@ -20,21 +20,21 @@ p {
 
 .page__bg {
 	background-image: url("/f/images/background.png");
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
+	overflow: hidden;
 }
 
-.page-content__wrapper {
-	max-width: 1120px;
-	margin: 0 auto;
-	padding: 47px 0 67px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+.page-content {
+/* 	max-width: 1280px; */
+	padding: 0 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 }
 
-.page-content__title {
+.page-content__headline {
 	font-size: 36px;
 	font-family: "Exo2.0-Thin";
 	color: #fff;
@@ -43,77 +43,44 @@ p {
 	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
 }
 
-.page-content__product-wrapper {
+.page-products {
 	margin-top: 23px;
-	display: flex;
-	flex-wrap: wrap;
+	font-size: 0;
 }
 
-.page-content__product-block {
-	/*border-width: 4px;*/
-	/* border-color: rgb(22, 152, 217); */
-	/* border-style: solid; */
+.page-products__item {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 80px;
+}
+
+.page-products__item-bg {
 	background-image: url("/f/images/product_back_default.png");
-	/* border-radius: 10px; */
 	width: 320px;
 	height: 480px;
-	margin-right: 80px;
 	position: relative;
 	z-index: 10;
+	cursor: pointer;
 }
 
-.page-content__product-block.selected-product {
+.page-products__item-bg.selected {
 	background-image: url("/f/images/product_back_selected.png");
 }
 
-.page-content__product-block.disabled-product {
+.page-products__item-bg.disabled {
 	background-image: url("/f/images/product_back_disabled.png");
 }
 
-/*.page-content__product-block:before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    background-image: url("/f/images/background.png");
-	border: 20px solid transparent;
-	border-left: 20px solid transparent;
-	border-top: 20px solid transparent;
-}*/
-
-.page-content__product-block:last-child {
+.page-products__item:last-child {
 	margin-right: 0;
 }
 
-.page-content__product-block--wrapper-text {
+.page-products__item-inner {
 	padding: 20px 45px;
 	position: relative;
 }
 
-/*.page-content__product-block--wrapper-text:before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-	border: 20px solid rgb(242, 242, 242);
-	border-left: 20px solid transparent;
-	border-top: 20px solid transparent;
-	z-index: 10;	
-}*/
-
-/*.page-content__product-block--wrapper-text:after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: 16px;
-    width: 4px;
-    height: 40px;
-    transform: skew(-45deg);
-    background-color: rgb(22, 152, 217);
-    z-index: 10;
-}*/
-
-.page-content__product-short-description {
+.page-products__item-description {
 	font-size: 16px;
 	font-family: "TrebuchetMS-regular";
 	color: rgb(102, 102, 102);
@@ -121,7 +88,11 @@ p {
 	text-align: left;
 }
 
-.page-content__product-title {
+.page-products__item-bg.disabled .page-products__item-description {
+	color: rgba(179, 179, 179, 0.502);
+}
+
+.page-products__item-title {
 	font-size: 48px;
 	font-family: "TrebuchetMS-bold";
 	color: rgb(0, 0, 0);
@@ -129,7 +100,11 @@ p {
 	text-align: left;
 }
 
-.page-content__product-main-component {
+.page-products__item-bg.disabled .page-products__item-title {
+	color: rgba(179, 179, 179, 0.502);
+}
+
+.page-products__item-main-component {
 	font-size: 24px;
 	font-family: "TrebuchetMS-bold";
 	color: rgb(0, 0, 0);
@@ -137,7 +112,11 @@ p {
 	text-align: left;
 }
 
-.page-content__product-offer {
+.page-products__item-bg.disabled .page-products__item-main-component {
+	color: rgba(179, 179, 179, 0.502);
+}
+
+.page-products__item-offer {
 	font-size: 14px;
 	font-family: "TrebuchetMS-regular";
 	color: rgb(102, 102, 102);
@@ -146,8 +125,14 @@ p {
 	margin-top: 16px;
 }
 
-.page-content__product-cat-image {
- 	/* background-image: url("/f/images/cat.png"); */
+.page-products__item-bg.disabled .page-products__item-offer {
+	color: rgba(179, 179, 179, 0.502);
+}
+
+.page-products__item-image {
+	background-image: url("/f/images/cat.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: 98%;
 	height: 273px;
 	position: absolute;
@@ -155,7 +140,11 @@ p {
 	left: 4px;
 }
 
-.page-content__product-weight {
+.page-products__item-bg.disabled .page-products__item-image {
+	background-image: url("/f/images/cat_disabled.png");
+}
+
+.page-products__item-weight {
 	position: absolute;
 	bottom: 12px;
 	right: 12px;
@@ -170,45 +159,52 @@ p {
 	height: 81px;
 }
 
-.page-content__product-weght--units-measure {
+.page-products__item-bg.disabled .page-products__item-weight {
+	background-color: rgb(179, 179, 179);
+}
+
+.page-products__item-bg.selected .page-products__item-weight {
+	background-color: rgb(217, 22, 103);
+}
+
+.page-products__item-weight--units-measure {
 	font-family: "TrebuchetMS-regular";
 	font-size: 21px;
 	display: block;
     line-height: 0.7;
 }
 
-.Back {
-  border-width: 4px;
-  border-color: rgb(22, 152, 217);
-  border-style: solid;
-  background-color: rgb(242, 242, 242);
-  position: absolute;
-  left: 80px;
-  top: 104px;
-  width: 312px;
-  height: 472px;
-  z-index: 51;
+.page-products__description-after-item {
+	font-size: 13px;
+	font-family: "TrebuchetMS-regular";
+	color: rgb(255, 255, 255);
+	line-height: 1.231;
+	text-align: center;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);	
+	padding-top: 16px;
 }
-.Underline {
-  background-image: url("Underline.png");
-  position: absolute;
-  left: 311px;
-  top: 612px;
-  width: 28px;
-  height: 1px;
-  z-index: 50;
+
+.page-products__item-bg.disabled ~ .page-products__description-after-item {
+	color: rgb(255, 255, 102);
 }
-.Чего_сидишь__Порадуй_котэ__купи_ {
-  font-size: 13px;
-  font-family: "Trebuchet MS";
-  color: rgb(255, 255, 255);
-  line-height: 1.231;
-  text-align: center;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
-  position: absolute;
-  left: 132px;
-  top: 610.349px;
-  z-index: 49;
+
+.page-products__description-after-item--link {
+	color: #107cb2;
+	border-bottom: 1px dashed #107cb2;
+	cursor: pointer;
 }
+
+.Ellipse {
+  border-radius: 50%;
+  background-color: rgb(179, 179, 179);
+  position: absolute;
+  left: 1104px;
+  top: 488px;
+  width: 81px;
+  height: 81px;
+  z-index: 121;
+}
+
+
 
 
