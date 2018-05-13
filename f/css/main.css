@@ -21,7 +21,7 @@ p {
 .page__bg {
 	background-image: url("/f/images/background.png");
 	background-size: 100%;
-/* 	overflow: hidden; */
+	overflow-x: hidden;
 }
 
 .page-content {
